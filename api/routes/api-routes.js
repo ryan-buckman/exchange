@@ -9,5 +9,9 @@ router.get('/', function (req, res) {
     });
 });
 
+var newsController = require('../controllers/newsController');
+router.route('/news')
+    .get(newsController.index);
+    
 // Export API routes
 module.exports = router;
