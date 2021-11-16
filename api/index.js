@@ -22,9 +22,9 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 // use api routes
-app.use('/api', apiRoutes)
+app.use('/api', apiRoutes);
 
 // launch app to listen to specified port
-app.listen(port, function () {
-    console.log("server listening on port " + port);
+const server = app.listen(port, () => {
+    console.log('Express listening at ', server.address().port);
 });

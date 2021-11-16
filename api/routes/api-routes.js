@@ -12,6 +12,11 @@ router.get('/', function (req, res) {
 var newsController = require('../controllers/newsController');
 router.route('/news')
     .get(newsController.index);
-    
+
+var quoteController = require('../controllers/quoteController')
+router.route('/quote')
+    .get(quoteController.index);
+
+  
 // Export API routes
 module.exports = router;
