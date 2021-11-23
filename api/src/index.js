@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const config = require('../configuration/config');
+
 let express = require('express')
 
 let bodyParser = require('body-parser');
@@ -19,7 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // setup server port
-var port = process.env.PORT || 8080;
+var port = config.port
 
 // use api routes
 app.use('/api', apiRoutes);
@@ -28,3 +30,6 @@ app.use('/api', apiRoutes);
 const server = app.listen(port, () => {
     console.log('Express listening at ', server.address().port);
 });
+
+module.exports= app;
+module.exports.port=server.address().port
