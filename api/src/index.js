@@ -1,10 +1,11 @@
 require('dotenv').config()
+const debug =require('debug')('server:debug');
 
-const config = require('../configuration/config');
+const config = require('config');
 
-let express = require('express')
+const express = require('express')
 
-let bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const cors = require('cors');
 
@@ -20,16 +21,15 @@ app.use(bodyParser.urlencoded({
  }));
 app.use(bodyParser.json());
 
-// setup server port
-var port = config.port
 
 // use api routes
 app.use('/api', apiRoutes);
 
 // launch app to listen to specified port
-const server = app.listen(port, () => {
-    console.log('Express listening at ', server.address().port);
-});
+const server = app.listen(config.get('port'),()=>{
+    debug(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
+    console.log(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
+})
 
-module.exports= app;
-module.exports.port=server.address().port
+ module.exports= app;
+ module.exports.port= server.address().port

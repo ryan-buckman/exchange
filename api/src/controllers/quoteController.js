@@ -1,6 +1,6 @@
 const { pipeline } = require('stream');
 const got = require('got');
-const config = require('../../configuration/config');
+const config = require('../../config/config');
 
 exports.index = function (req, res) {
     const symbol= req.query.symbol;
