@@ -1,3 +1,12 @@
+<script>
+	import { pageHeading } from '$lib/core/stores/page-heading-store';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		pageHeading.set('Dashboard');
+	});
+</script>
+
 <h3 class="text-lg font-medium leading-6 text-indigo-700">
 	Welcome to Exchange built with SvelteKit
 </h3>

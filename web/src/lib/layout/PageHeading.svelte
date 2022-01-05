@@ -1,8 +1,23 @@
+<script>
+	import { pageHeading } from '$lib/core/stores/page-heading-store';
+	import { onMount } from 'svelte';
+
+	let title;
+
+	onMount(async () => {
+		title = $pageHeading;
+	});
+
+	pageHeading.subscribe((result) => {
+		title = result;
+	});
+</script>
+
 <div
 	class="my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300"
 >
 	<div>
-		<h5 class="text-2xl font-medium leading-tight text-gray-800">Dashboard</h5>
+		<h5 class="text-2xl font-medium leading-tight text-gray-800">{title}</h5>
 		<ul class="flex flex-col md:flex-row items-start md:items-center text-gray-600 text-sm mt-3">
 			<li class="flex items-center mr-3 mt-3 md:mt-0">
 				<span class="mr-2">

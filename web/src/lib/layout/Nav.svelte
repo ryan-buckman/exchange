@@ -1,4 +1,6 @@
 <script>
+	import Search from './Search.svelte';
+
 	let isMenu = false;
 	let isList;
 
@@ -20,19 +22,34 @@
 				<div class="px-6 pt-4 overflow-y-auto">
 					<div class="flex items-center justify-between">
 						<div class="flex items-center">
-							<svg aria-label="Home" id="logo" xmlns="http://www.w3.org/2000/svg" class="h-8 w-43" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-							  </svg>
+							<svg
+								aria-label="Home"
+								id="logo"
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-8 w-43"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+								/>
+							</svg>
 							<p
 								data-cy="mobile-nav-heading"
-								class="text-bold md:text2xl text-base pl-3 text-gray-800">
+								class="text-bold md:text2xl text-base pl-3 text-gray-800"
+							>
 								Exchange
 							</p>
 						</div>
 						<div
 							on:click|preventDefault={() => handleMenuClick(false)}
 							id="cross"
-							class="text-gray-800 cursor-pointer">
+							class="text-gray-800 cursor-pointer"
+						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="icon icon-tabler icon-tabler-x"
@@ -178,11 +195,23 @@
 	<div class="container px-6 justify-between h-16 flex items-center lg:items-stretch mx-auto">
 		<div class="h-full flex items-center">
 			<div class="mr-10 flex items-center">
-				
-<svg aria-label="Home" id="logo" xmlns="http://www.w3.org/2000/svg" class="h-8 w-43" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-  </svg>
-  
+				<svg
+					aria-label="Home"
+					id="logo"
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-8 w-43"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+					/>
+				</svg>
+
 				<!-- <svg
 					aria-label="Home"
 					id="logo"
@@ -219,29 +248,7 @@
 			<div class="w-full h-full flex items-center">
 				<div class="w-full pr-12 h-full flex items-center">
 					<div class="relative w-full">
-						<div class="text-gray-500 absolute ml-3 inset-0 m-auto w-4 h-4">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-search"
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" />
-								<circle cx="10" cy="10" r="7" />
-								<line x1="21" y1="21" x2="15" y2="15" />
-							</svg>
-						</div>
-						<input
-							class="border border-gray-100 focus:outline-none focus:border-indigo-700 w-56 rounded text-sm text-gray-500 bg-gray-100 pl-8 py-2"
-							type="text"
-							placeholder="Search"
-						/>
+						<Search />
 					</div>
 				</div>
 				<div class="w-full flex">
