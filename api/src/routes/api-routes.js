@@ -13,9 +13,14 @@ var newsController = require('../controllers/newsController');
 router.route('/news')
     .get(newsController.index);
 
-var quoteController = require('../controllers/quoteController')
+var quoteController = require('../controllers/quoteController');
 router.route('/quote')
     .get(quoteController.index);
+
+var stockSymbolController = require('../controllers/stockSymbolController');
+router.route('/stock')
+    .get(stockSymbolController.index);
+
 
   
 // Export API routes
